@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <div class="header">
+      <ion-title class="title">Welcome Back</ion-title>
+      <p class="subTitle">Login to access your account</p>
+    </div>
+  </ion-header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="ion-padding">
+      <ion-card>
+        <ion-item>
+          <ion-input
+            label="Username" 
+            formControlName="username"  
+            label-placement="floating" 
+            fill="outline" 
+            placeholder="Enter Username"
+            class="input">
+          </ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          label="password" 
+          formControlName="password"
+          label-placement="floating" 
+          fill="outline" 
+          placeholder="Enter Password"
+          class="input">
+        </ion-input>
+        <ion-icon 
+          name="{{ showPassword ? 'eye-off-outline' : 'eye-outline' }}" 
+          slot="end" 
+          (click)="togglePasswordVisibility()" class="eye">
+        </ion-icon>
+        <ion-note *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="warning" color="danger">
+          Password harus minimal 6 karakter, mengandung huruf besar, huruf kecil, dan angka
+        </ion-note>
+      </ion-item>
+      <ion-button class="login" type="submit" >LOGIN</ion-button>
+    </ion-card>
+    </div>
+  </form>
+
+  <div class="signupLink">
+    <p>Don't have Account? <a [routerLink]="['/register']">SignUp Now!</a></p>
+  </div>
+</ion-content>

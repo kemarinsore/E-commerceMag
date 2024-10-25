@@ -80,7 +80,6 @@
               "buildTarget": "app:build:development"
             },
             "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
@@ -111,7 +110,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss", "src/theme/variables.scss", "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"],
             "scripts": []
           },
           "configurations": {
@@ -136,7 +135,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": "2b4b845e-1106-436a-b897-454f6050bc93"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon class="edit" slot="end" name="create" *ngIf="productId" (click)="editProduct(productId!)"></ion-icon>
+    <ion-icon class="hapus" slot="end" name="trash" (click)="deleteProduct()"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-back-button class="kembali" defaultHref="dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail Produk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let image of product.photo_urls">
+        <img [src]="image" class="centered-image" alt="Product Image" style="height: 250px;">
+      </div>
+      <div class="swiper-slide" *ngIf="!product.photo_urls || product.photo_urls.length === 0">
+        <img src="http://hopeanimalrescueofiowa.org/images/no_image_duplie_default.jpg" class="centered-image" style="height: 250px;" alt="Default Image">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-capitalize">
+        {{ product.name }}
+        <ion-chip color="primary">
+          <ion-label>{{ product.price | currency:'Rp. ':'symbol':'1.0' }}</ion-label>
+        </ion-chip>
+      </ion-card-title>
+      <ion-card-subtitle class="ion-text-capitalize"></ion-card-subtitle>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label text-wrap><b>Deskripsi: </b>
+            <span class="ion-text-capitalize">
+              {{ product.description }}
+            </span>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

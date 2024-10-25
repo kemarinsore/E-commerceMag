@@ -1,0 +1,90 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button class="kembali" defaultHref="dashboard"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="edt" >Edit Product</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="header">
+    <ion-title class="title">Hello Seller</ion-title>
+    <p class="subTitle">Update your product data</p>
+  </div>
+
+  <ion-card>
+    <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+      <div class="ion-padding">
+
+        <div class="image-preview" style="cursor: pointer;" id="open-custom-dialog" (click)="fileInput.click()">
+          <img [src]="previewImage || 'assets/placeholder.png'" alt="Preview Image" />
+        </div>
+ 
+        <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+          <ng-template>
+            <div class="wrapper">
+              <h1>Upload from</h1>
+              <ion-list lines="none">
+                <ion-item button="true" detail="false" (click)="selectImage(CameraSource.Camera)">
+                  <ion-icon name="camera"></ion-icon>
+                  <ion-label>Take a Photo</ion-label>
+                </ion-item>
+                <ion-item button="true" detail="false" (click)="selectImage(CameraSource.Photos)">
+                  <ion-icon name="image"></ion-icon>
+                  <ion-label>Select from Gallery</ion-label>
+                </ion-item>                            
+              </ion-list>
+            </div>
+          </ng-template>
+        </ion-modal>
+
+        <ion-item>
+          <input 
+            type="file" 
+            accept="image/*" 
+            (change)="onFileSelected($event)" 
+            #fileInput 
+            hidden>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            formControlName="name"
+            label="Product Name" 
+            label-placement="floating" 
+            fill="outline" 
+            placeholder="Enter your product name"
+            class="input">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            formControlName="price"
+            label="Price" 
+            label-placement="floating" 
+            fill="outline" 
+            placeholder="Enter the price of your product"
+            class="input"
+            type="tel">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            formControlName="description"
+            label="Description" 
+            label-placement="floating" 
+            fill="outline" 
+            placeholder="Enter the description of your product"
+            class="input">
+          </ion-input>
+        </ion-item>
+
+        <ion-button class="save" type="submit">Save Update</ion-button>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>
+

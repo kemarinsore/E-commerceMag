@@ -1,0 +1,84 @@
+.input {
+    font-size: 1rem; 
+    margin-top: 10px;
+}
+
+p {
+    font-size: 1rem; 
+}
+
+ion-item {
+    --background: #ffffff; 
+    border-radius: 20px;
+    margin-bottom: 20px; 
+}
+
+ion-card {
+    border-radius: 12px; 
+    box-shadow: 0px 6px 12px rgba(152, 152, 152, 0.1); 
+    padding: 20px; 
+    background-color: #ffffff;
+    margin-top: 10px;
+}
+
+ion-input {
+    color: black; 
+}
+
+.eye{
+    color: black;
+}
+
+.header {
+    margin-top: 190px; 
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.header .title {
+    font-size: 1.8rem;
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.header .subTitle {
+    color: gray;
+    font-size: 0.9rem;
+    margin-top: 30;
+    margin-bottom: 20px;
+}
+
+.signupLink {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 100%; 
+    margin-top: 190px; 
+}
+
+.signupLink p {
+    font-size: 0.9rem;
+}
+
+.signupLink a {
+    text-decoration: none;
+    color: #0a84ff;
+}
+
+.login {
+    display: block;
+    margin: 24px auto;
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center;
+    border-radius: 50px; 
+    color: white;
+    padding: 12px; 
+    font-size: 1rem; 
+}
+
+ion-button[disabled] {
+    background-color: #4a90e2; 
+}

@@ -3,14 +3,36 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'ganti dengan api',
+
+  // Getter untuk URL register
+  get registerUrl(): string {
+    return `${this.baseUrl}/register`;
+  },
+
+  // Getter untuk URL login
+  get loginUrl(): string {
+    return `${this.baseUrl}/login`;
+  },
+
+  // Getter untuk URL profil
+  get profilUrl(): string {
+    return `${this.baseUrl}/user`;  // Adjust the endpoint according to the actual route
+  },
+
+  // Getter untuk URL produk
+  get productsUrl(): string {
+    return `${this.baseUrl}/product`;
+  },
+
+  getProductsByNameUrl(productName: string): string {
+    return `${this.baseUrl}/products?name=${productName}`;
+  },
+  getProductPatchUrl(productId: string): string {
+    return `${this.baseUrl}/product/${productId}`;
+  }
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+

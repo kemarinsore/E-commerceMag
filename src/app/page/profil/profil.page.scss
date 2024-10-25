@@ -1,0 +1,103 @@
+ion-header {
+  --background: #000000; 
+}
+
+ion-toolbar {
+  --background: #ffffff; 
+  --color: #000000; 
+}
+
+ion-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.kembali {
+  color: #000000;
+}
+
+.custom-modal {
+  --height: 25vh; 
+  --border-radius: 16px; 
+  --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  --background: #ff0000; 
+  --color: #ffffff; 
+}
+
+.check {
+  color: #ffffff;
+}
+
+.custom-card {
+  border-radius: 16px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+  background-color: #ffffff; 
+  padding: 16px; 
+  margin: 8px 16px 16px 16px; 
+}
+
+.custom-card ion-card-content {
+  padding: 16px; 
+  background-color: #ffffff; 
+  color: #333; 
+}
+
+.avatar-container {
+  margin: auto; /* Add spacing below the avatar */
+  width: 150px;
+  height: 90px;
+}
+
+ion-avatar img {
+  width: 300px; 
+  height: 150px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.p-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333; 
+  margin-bottom: 8px;
+  margin-top: 80px;
+}
+
+ion-label {
+  font-size: 1.2rem;
+  color: #666; 
+  display: block;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+ion-list {
+  border-radius: 80px;
+  margin-top: 60px;
+}
+
+/* Larger screen adjustments */
+@media (min-width: 800px) {
+
+  ion-label {
+    font-size: 1.3rem;
+  }
+
+  .p-title {
+    font-size: 1.5rem;
+  }
+}
+
+.logout {
+  color: #000000;
+  font-size: 1.8rem;
+}
+
+.check {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-right: 10px;
+}

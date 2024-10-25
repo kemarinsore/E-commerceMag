@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Dashboard</ion-title>
+      <ion-buttons (click)="goToProfil()" slot="end">
+        <ion-button>
+          <ion-avatar>
+            <img [src]="profileImage || 'assets/img/avatar.png'" alt="Profile Picture">
+          </ion-avatar>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar placeholder="Search for product" (ionInput)="onSearchProduct($event)"></ion-searchbar>
+
+  <!-- Display Products in Grid Layout -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let card of cards; let i = index" (click)="goToDetail(card.id)">
+        <ion-card class="product-card">
+          <img [src]="card?.photo_urls?.[0] || previewImage" alt="Product Image" />
+          <ion-card-content>
+            <ion-card-title>{{card.name}}</ion-card-title>
+            <ion-card-subtitle>{{ card.price | currency:'Rp. ':'symbol':'1.0' }}</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)"></ion-infinite-scroll> -->
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" style="margin: 16px;">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button (click)="createCard()">
+        <ion-icon class="create" name="create"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ng-template #noData>
+    <p style="text-align: center; margin-top: 20px;">No products available.</p>
+  </ng-template>
+
+</ion-content>

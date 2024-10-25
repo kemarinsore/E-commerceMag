@@ -1,0 +1,109 @@
+ion-header {
+  --background: #ffffff; 
+}
+
+ion-toolbar {
+  --background: #ffffff; 
+  --color: #000000; 
+}
+
+.kembali{
+  font-size: 1.4rem;
+  margin-right: 20px;
+  color: #000000;
+}
+
+.edit{
+  font-size: 1.4rem;
+  margin-right: 15px;
+}
+
+.hapus{
+  font-size: 1.4rem;
+  margin-right: 12px;
+}
+
+ion-content {
+    background-color: #ffffff; 
+    padding: 15px; 
+  
+    ion-card {
+      border-radius: 12px; 
+      box-shadow: 0px 6px 12px rgba(152, 152, 152, 0.1); 
+      padding: 20px; 
+      background-color: rgb(0, 0, 0);
+
+      ion-card-title{
+        color: #ffffff;
+  
+      ion-card-content {
+        padding: 0;
+  
+        ion-grid {
+          ion-row {
+            align-items: center; 
+  
+            ion-col {
+              h2 {
+                font-size: 1.6rem; 
+                font-weight: 700; 
+                color: #ffffff; 
+                margin: 0 0 10px 0; 
+              }
+  
+              ion-chip {
+                --background: #a90000; 
+                --color: rgb(255, 255, 255); 
+                margin-right: 5px; 
+              }
+  
+              ion-list {
+                margin-top: 10px;
+  
+                ion-item {
+                  --background: #ffffff; 
+                  --color: #ffffff; 
+                  border-radius: 8px; 
+                  margin-bottom: 5px; 
+                }
+              }
+            }
+  
+            swiper-container {
+              width: 10px; 
+              height: 10px;
+              object-fit: contain; 
+              border-radius: 50%; 
+            }
+          }
+        }
+
+  
+        ion-card-subtitle {
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2rem; 
+          color: #ffffff;
+          margin-top: 10px; 
+        }
+      }
+    }
+  }
+
+  .swiper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .centered-image {
+    height: 250px;
+    object-fit: contain;
+  }
+}
